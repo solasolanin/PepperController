@@ -1,0 +1,193 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Baloo+Tammudu');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+
+body {
+    margin:0;
+    padding:0;
+    background-image: url("../../img/back_ground_cardboard.png");
+
+}
+
+
+h2.subtitle {
+    font-family: 'Roboto', sans-serif;
+    color: #395475;
+}
+.createFont{
+    font-family: 'Merienda', cursive;
+}
+
+.connect {
+    padding:5px;
+    height:30px;
+    width:100px;
+    font-size: 20px;
+    border: none;
+    background-color: #395475;
+    color:azure;
+}
+
+.words-box{
+    width:80%;
+    padding:10px;
+    border:none;
+    font-size:20px;
+    vertical-align:middle;
+}
+
+.apply{
+    margin-left:20px;
+    margin-top:5px;
+    font-size: 20px;
+    border:none;
+    background-color:#395475;
+    height:50px;
+    width:10%;
+    color:azure;
+}
+
+#advance{
+    margin-left:130px;
+    transform:rotate(90deg);
+}
+#left{
+    margin-left:10px;
+}
+#right{
+    margin-left:100px;
+    transform:rotate(180deg);
+}
+#turnL{
+    margin-left:10px;
+    height:120%;
+    width:auto;
+}
+#retreat{
+    margin-left:50px;
+    transform:rotate(-90deg);
+}
+#turnR {
+    margin-left: 40px;
+    transform:rotateY(180deg);
+    height:120%;
+    width:auto;
+}
+
+button[name="cmd1"], button[name="cmd2"], button[name="cmd3"],
+button[name="cmd4"], button[name="cmd5"], button[name="cmd6"],
+button[name="almemory"]
+{
+    padding: 10px;
+    height: 70px;
+    width: 140px;
+    font-size: 30px;
+    border: none;
+    background-color: #395475;
+    color: azure;
+}
+
+.cmdBtn{
+	margin-left:10px;
+	padding: 10px;
+    font-size: 20px;
+    border: none;
+    background-color: #395475;
+    color: azure;
+	box-shadow: 4px 4px #696969;
+}
+
+.createTag{
+	height: 130px;
+	width: 180px;
+}
+
+.cmdIO{
+	background-color: #ffff01;
+	color: gray;
+}
+
+.cmdSpeech{
+	background-color: #00ff01;
+	color:gray;
+}
+
+
+/*モーダル*/
+.modal_wrap input{
+    display: none;
+}
+
+.modal_overlay{
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0s 0.5s;
+    transform: scale(0);
+}
+
+.modal_trigger{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.modal_content{
+    align-self: center;
+    width: 60%;
+    max-width: 800px;
+    padding: 30px 30px 15px;
+    box-sizing: border-box;
+    background: #fff;
+    line-height: 1.4em;
+    transform: scale(0.3);
+    transition: 0.5s;
+}
+
+.close_button{
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal_wrap input:checked ~ .modal_overlay{
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s;
+}
+
+.modal_wrap input:checked ~ .modal_overlay .modal_content{
+    transform: scale(1);
+}
+
+.open_button{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    margin: auto;
+    padding: 8px 16px;
+    color: #444;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    border-radius: 16px;
+    cursor: pointer;
+}
