@@ -10,7 +10,7 @@
     	<div class="row">
     	<%--Connection --%>
     		<div class="col-md-6">
-	    		<h2 class="subtitle">Pepperに接続
+	    		<h2 class="subtitle">Pepperに接続する
     			<input type="button" value="接続" class="cmdBtn cmd_connect" data-toggle="modal" data-target="#sampleModal" style="margin-top:10px">
     			</h2>
     		</div>
