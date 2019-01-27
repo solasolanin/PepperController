@@ -3,8 +3,8 @@ var self = this;
 
 function connect(ip){
 	// IPアドレスの取得
-//	var pepperIp = ip.val();
-	var pepperIp =$("#pepperIP").val()
+	var pepperIp = ip;
+//	var pepperIp =$("#pepperIP").val()
 	// プロキシの作成
     var setupIns_ = function () {
 

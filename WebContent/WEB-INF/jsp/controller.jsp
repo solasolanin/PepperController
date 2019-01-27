@@ -12,8 +12,6 @@
     		<div class="col-md-6">
 	    		<h2 class="subtitle">Pepperに接続
     			<input type="button" value="接続" class="cmdBtn cmd_connect" data-toggle="modal" data-target="#sampleModal" style="margin-top:10px">
-    			<a onclick="connect('<c:out value="${sessionScope.pepperIpAddress}"/>')">接続</a>
-    			<input type="hidden" id="pepperIP" value="192.168.100.122"/>
     			</h2>
     		</div>
     	</div>

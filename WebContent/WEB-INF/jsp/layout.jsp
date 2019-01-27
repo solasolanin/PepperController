@@ -7,8 +7,8 @@
 <title>${param.title}</title>
 
 <%--qimessaging.jsの取得 --%>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/qimessaging/1.0/qimessaging.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/qimessaging/1.0/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/lib/qimessaging/1.0/qimessaging.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/lib/qimessaging/1.0/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/control.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/window.js"></script>
 <script type="text/javascript">
