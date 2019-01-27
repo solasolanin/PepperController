@@ -8,6 +8,6 @@
 <title>default.jsp</title>
 </head>
 <body>
-	<c:redirect url="/index"/>
+	<c:redirect url="/pepperCtr/index"/>
 </body>
 </html>

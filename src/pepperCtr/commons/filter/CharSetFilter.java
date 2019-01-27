@@ -8,11 +8,12 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 
 /**
  * Servlet Filter implementation class CharSetFilter
  */
-
+@WebFilter("/pepperCtr")
 public class CharSetFilter implements Filter {
 
 	private String encoding;

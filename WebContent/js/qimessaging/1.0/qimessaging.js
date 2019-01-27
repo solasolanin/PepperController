@@ -19,7 +19,7 @@ function QiSession(host, resource)
   if (host == undefined)
     host = window.location.host;
   if (resource == undefined)
-  	resource = "libs/qimessaging/1.0/socket.io";
+  	resource = "lib/qimessaging/1.0/socket.io";
     //resource = "libs/qimessaging/1.0/socket.io";
   if (host.substring(0, 7) != "http://")
     host = "http://" + host;

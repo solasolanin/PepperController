@@ -97,24 +97,52 @@
         <br>
 		<%--Move--%>
 		<div class="row">
-            <div class="col-md-6">
-                <h2 class="subtitle createFont">移動</h2>
-                    <img src="${pageContext.request.contextPath}/img/arrow.png" id="advance" /><br />
-                    <img src="${pageContext.request.contextPath}/img/arrow.png" id="left" />
-                    <img src="${pageContext.request.contextPath}/img/arrow.png" id="right" /><br />
-                    <img src="${pageContext.request.contextPath}/img/arrow2.png" id="turnL" />
-                    <img src="${pageContext.request.contextPath}/img/arrow.png" id="retreat" />
-                    <img src="${pageContext.request.contextPath}/img/arrow2.png" id="turnR" />
+           	<div class="col-md-12">
+				<h2 class="subtitle createFont">移動</h2>
+                	<label for="trigger" class="cmdBtn createTag cmdMove"
+	    				onclick="openModal('左に移動','左方向に移動します。','cmdBtn cmdMove','moveDirection(0)',null)">
+	    				<img src="${pageContext.request.contextPath}/img/arrow.png" width="115px"/></label>
+                    <label for="trigger" class="cmdBtn createTag cmdMove"
+	    				onclick="openModal('右に移動','右方向に移動します。','cmdBtn cmdMove','moveDirection(1)',null)">
+	    				<img src="${pageContext.request.contextPath}/img/arrow.png" style="transform:rotate(180deg);width: 115px" /></label>
+	    			<label for="trigger" class="cmdBtn createTag cmdMove"
+	    				onclick="openModal('前進','前方に移動します。','cmdBtn cmdMove','moveDirection(2)',null)">
+	    				<img src="${pageContext.request.contextPath}/img/arrow.png" style="transform:rotate(90deg);width: 115px" /></label>
+	    			<label for="trigger" class="cmdBtn createTag cmdMove"
+	    				onclick="openModal('後退','後方に移動します。','cmdBtn cmdMove','moveDirection(3)',null)">
+	    				<img src="${pageContext.request.contextPath}/img/arrow.png" style="transform:rotate(-90deg);width: 115px" /></label>
+                    <label for="trigger" class="cmdBtn createTag cmdMove"
+	    				onclick="openModal('時計回り','時計回りに回転します。','cmdBtn cmdMove','moveDirection(4)',null)">
+	    				<img src="${pageContext.request.contextPath}/img/arrow2.png" style="width: 115px" /></label>
+	    			<label for="trigger" class="cmdBtn createTag cmdMove"
+		    			onclick="openModal('反時計回り','反時計回りに回転します。','cmdBtn cmdMove','moveDirection(5)',null)">
+	    				<img src="${pageContext.request.contextPath}/img/arrow2.png" style="transform:rotateY(180deg);width: 115px"/></label>
+	    			<label for="trigger" class="cmdBtn createTag cmdMove"
+		    			onclick="openModal('停止','移動を停止します。','cmdBtn cmdMove','stopMove()',null)">
+	    				停止</label>
            </div>
-           <div class="col-md-6">
-            <div class="row">
-            	<h2 class="subtitle createFont">Behavior</h2>
-                	<input type="button" class="cmdBtn" value="command1" name="cmd5" style="margin-top:10px">
-                    <input type="button" class="cmdBtn" value="command2" name="cmd6" style="margin-top:10px;margin-left:20px;">
+        </div>
+		<div class="row">
+			<div class="col-md-12">
+	       	<h2 class="subtitle createFont">モーション</h2>
+            	<label for="trigger" class="cmdBtn createTag cmdMotion"
+	    			onclick="openModal('拍手','モーション”拍手”を実行します。','cmdBtn cmdMotion','pAction(1)',null)">拍手</label>
+                <label for="trigger" class="cmdBtn createTag cmdMotion"
+	    			onclick="openModal('拍手','モーション”うなずき”を実行します。','cmdBtn cmdMotion','pAction(4)',null)">うなずき</label>
+	    		<label for="trigger" class="cmdBtn createTag cmdMotion"
+	    			onclick="openModal('拍手','モーション”ガッツポーズ”を実行します。','cmdBtn cmdMotion','pAction(3)',null)">ガッツポーズ</label>
+            </div>
+            <div class="col-md-12">
+            <label for="trigger" class="cmdBtn createTag cmdMotion"
+	    			onclick="openModal('がっかり','モーション”がっかり”を実行します。','cmdBtn cmdMotion','nAction(1)',null)">がっかり</label>
+            <label for="trigger" class="cmdBtn createTag cmdMotion"
+	    			onclick="openModal('わからない','モーション”わからない”を実行します。','cmdBtn cmdMotion','nAction(4)',null)">わからない</label>
+            <label for="trigger" class="cmdBtn createTag cmdMotion"
+	    			onclick="openModal('腕組み','モーション”腕組み”を実行します。','cmdBtn cmdMotion','nAction(5)',null)">腕組み</label>
             </div>
         </div>
-        </div>
-
+        <br>
+        <br>
     </div>
 	</c:param>
 </c:import>

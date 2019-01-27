@@ -9,12 +9,11 @@
 <%--qimessaging.jsの取得 --%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/qimessaging/1.0/qimessaging.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/qimessaging/1.0/jquery.min.js"></script>
-
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/control.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/window.js"></script>
 <script type="text/javascript">
 $(function(){
-	connect(<c:out value="${sessionScope.pepperIpAddress}"/>);
+	connect('<c:out value="${sessionScope.pepperIpAddress}"/>');
 });
 </script>
 
@@ -22,8 +21,9 @@ $(function(){
 <link href="${pageContext.request.contextPath}/style/css/main.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
 </head>
-<body id="mainBody" style="background-color:#e0e0e0; padding-top: 30px">
-	<%--ヘッダー --%>
+
+
+<body id="mainBody" style="background-color:#e0e0e0; padding-top: 30px" <c:out value="${requestScope.addingInfo }"/>>
 	<nav class="navbar navbar-default navbar-fixed-top" style="background-color:#395475;">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -42,6 +42,7 @@ $(function(){
 				<li <c:out value ="${controllerMode }"/>><a href="${pageContext.servletContext.contextPath}/pepperCtr/controller" style="color: azure;">リモコンモード</a></li>
 				<li <c:out value ="${createMode }"/>><a href="${pageContext.servletContext.contextPath}/pepperCtr/createMode" style="color: azure;">クリエイトモード</a></li>
 				<li><a href="#" onclick="openWorkSpace('${pageContext.servletContext.contextPath}/pepperCtr/workSpace')" style="color: azure;">ワークスペース</a></li>
+				<li><a><span class="connectedText" style="margin-top: 10px;color: white;">現在の状態：未接続</span></a>
 			</ul>
 		</div>
       </div>
@@ -67,6 +68,7 @@ $(function(){
 	</div>
 	</div>
 	<section>
+
 	${param.content }
 	</section>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

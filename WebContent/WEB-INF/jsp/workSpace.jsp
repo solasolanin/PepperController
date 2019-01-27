@@ -18,7 +18,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/window.js"></script>
 <script>
 function startCommand(){
-	connect(<c:out value="${sessionScope.pepperIpAddress}"/>);
+	connect('<c:out value="${sessionScope.pepperIpAddress}"/>');
 	<c:forEach items="${sessionScope.cmdList }" var="command">
 	setTimeout=(<c:out value="${pageScope.command.cmdOnClick}"/>,1000)
 	</c:forEach>
@@ -54,11 +54,15 @@ function startCommand(){
 		</div>
 		<br>
 		<br>
-		<c:forEach items="${sessionScope.cmdList }" var="command">
+		<c:forEach items="${sessionScope.cmdList }" var="command" varStatus="cmdStatus">
 			<div class="row">
-				<div class="col-xs-5 col-xs-offset-4">
-					<input type="button" class="<c:out value="${pageScope.command.cmdClass }"/>" value='<c:out value="${pageScope.command.userDefinedName }"/>' onclick="<c:out value="${pageScope.command.cmdOnClick}"/>">
-				</div>
+			<form action="remove" method="post">
+					<button type="submit" class="pull-right" style="border:0px;background-color:transparent;cursor:pointer;">
+						<span class="glyphicon glyphicon-remove-sign" style="margin-left: 30px"></span>
+					</button>
+					<input type="button" class="center-block <c:out value="${pageScope.command.cmdClass }"/> " value='<c:out value="${pageScope.command.userDefinedName }"/>' onclick="<c:out value="${pageScope.command.cmdOnClick}"/>">
+					<input type="hidden" name="listIndex" value='<c:out value="${pageScope.cmdStatus.index }"/>'>
+			</form>
 			</div>
 			<br>
 			<br>

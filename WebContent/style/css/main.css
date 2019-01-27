@@ -89,7 +89,7 @@ button[name="almemory"]
 }
 
 .cmdBtn{
-	margin-left:10px;
+	/*margin-left:10px;*/
 	padding: 10px;
     font-size: 20px;
     border: none;
@@ -109,8 +109,17 @@ button[name="almemory"]
 }
 
 .cmdSpeech{
-	background-color: #00ff01;
+	background-color: #ffccff;
 	color:gray;
+}
+.cmdMove{
+	background-color: #99ff99;
+	color:gray;
+}
+
+.cmdMotion{
+	background-color: #66ffcc;
+	color: gray;
 }
 
 

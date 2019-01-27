@@ -1,7 +1,6 @@
 package pepperCtr.presentation.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,10 +15,10 @@ import pepperCtr.commons.presentation.util.SessionConstant;
 import pepperCtr.logic.bean.CommandBean;
 
 /**
- * Servlet implementation class AddCmdToWSpaceServlet
+ * Servlet implementation class RemoveCmdServlet
  */
-@WebServlet("/pepperCtr/addWSpace")
-public class AddCmdToWSpaceServlet extends HttpServlet {
+@WebServlet("/pepperCtr/remove")
+public class RemoveCmdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -27,26 +26,15 @@ public class AddCmdToWSpaceServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		String cmdName = request.getParameter("cmdName");
-		String userDefinedName = request.getParameter("userDefinedName");
-		if (userDefinedName.isEmpty()) {
-			userDefinedName = cmdName;
-		}
-		String cmdOnClick = request.getParameter("cmdOnClick");
-		String cmdClass = request.getParameter("cmdClass");
-		CommandBean commandBean = new CommandBean(cmdName, userDefinedName, cmdOnClick, cmdClass);
 		@SuppressWarnings("unchecked")
 		List<CommandBean> cmdList = (List<CommandBean>) session.getAttribute(SessionConstant.CMD_LIST);
 		if (cmdList == null) {
-			cmdList = new ArrayList<>();
+			request.getRequestDispatcher(JspUrlConstatnt.WORK_SPACE).forward(request, response);
+			return;
 		}
-		cmdList.add(commandBean);
-		session.setAttribute(SessionConstant.CMD_LIST, cmdList);
-		request.setAttribute("createMode", "class = 'active'");
-		request.setAttribute("addingInfo", "onload=alert('追加しました。')");
-		request.getRequestDispatcher(JspUrlConstatnt.CREATE_MODE).forward(request, response);
+		int index = Integer.parseInt(request.getParameter("listIndex"));
+		cmdList.remove(index);
+		request.getRequestDispatcher(JspUrlConstatnt.WORK_SPACE).forward(request, response);
 	}
-
 }
